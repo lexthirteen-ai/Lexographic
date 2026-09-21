@@ -1,0 +1,274 @@
+<title>Steal My Six-Agent Setup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@400;500;600;700&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+  :root{
+    --ink:#100f09; --paper:#faf9f6; --mid:#899499; --hair:#d3d3d3;
+    --teal:#008f8c; --mint:#bbe3d9; --pink:#efb7d8;
+    --bg:#faf9f6; --fg:#100f09; --line:#d8d6cf; --soft:#6f6a5e; --card:#ffffff;
+    --btn-bg:#100f09; --btn-fg:#faf9f6;
+    --display:"Playfair Display",Georgia,"Times New Roman",serif;
+    --body:"Montserrat","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --bg:#131209; --fg:#faf9f6; --line:#33301f; --soft:#9a948a; --card:#1b1a10;
+    --btn-bg:#bbe3d9; --btn-fg:#100f09;}}
+  :root[data-theme="dark"]{
+    --bg:#131209; --fg:#faf9f6; --line:#33301f; --soft:#9a948a; --card:#1b1a10;
+    --btn-bg:#bbe3d9; --btn-fg:#100f09;}
+
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--fg);font-family:var(--body);margin:0}
+  .wrap{max-width:940px;margin:0 auto;padding-inline:16px;padding-block:28px 52px}
+  .masthead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;
+    border-bottom:1px solid var(--line);padding-bottom:13px;margin-bottom:20px}
+  .masthead h1{font-family:var(--display);font-weight:700;font-size:clamp(22px,4.2vw,31px);
+    margin:0;letter-spacing:-.01em}
+  .masthead .sub{font-size:12.5px;color:var(--soft)}
+  .tl{color:var(--teal)}
+  .bar{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:14px 0 8px}
+  button{font-family:var(--body);font-weight:600;font-size:13px;cursor:pointer;border-radius:2px;
+    border:1px solid var(--line);background:transparent;color:var(--fg);padding:9px 14px}
+  button:hover{background:var(--line)}
+  button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+  button.primary{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+  button[disabled]{opacity:.45;cursor:not-allowed}
+  .status{font-size:12.5px;color:var(--soft);min-height:1.3em;margin:2px 0 0}
+  .note{font-size:12px;line-height:1.6;color:var(--soft);background:var(--card);
+    border:1px solid var(--line);padding:11px 13px;border-radius:2px;margin:10px 0 0}
+  #imgOut{margin-top:14px}
+  #imgOut img{width:100%;display:block;border:1px solid var(--line)}
+  #imgOut figcaption{font-size:11.5px;color:var(--soft);margin-top:5px}
+  .shell{border:1px solid var(--line);overflow:hidden;background:#faf9f6}
+  .fit{width:100%;aspect-ratio:1200/1500;overflow:hidden;position:relative}
+  .fit .sheet{position:absolute;top:0;left:0;transform-origin:top left}
+
+  /* ================= THE SHEET: fixed 1200x1500 ================= */
+  .sheet{width:1200px;height:1500px;background:#faf9f6;color:#100f09;
+    font-family:var(--body);padding:74px 76px 0;position:relative;overflow:hidden}
+  .sheet .speck{position:absolute;width:7px;height:7px;border-radius:50%;
+    background:#bbe3d9;opacity:.85}
+
+  .kicker{font-size:15px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:#008f8c;margin-bottom:10px}
+  .title{font-family:var(--display);font-weight:700;font-size:60px;line-height:1.02;
+    letter-spacing:-.02em;margin:0;color:#100f09}
+  .title em{font-style:normal;color:#008f8c}
+  .paren{font-family:var(--display);font-style:italic;font-weight:600;font-size:29px;
+    color:#008f8c;margin:7px 0 0}
+  .dek{font-size:17.5px;line-height:1.45;color:#5d5a52;margin:12px 0 0;max-width:1000px}
+
+  .rail{position:relative;margin-top:20px;padding-left:34px}
+  .rail:before{content:"";position:absolute;left:6px;top:14px;bottom:128px;width:2px;
+    background:#d3d3d3}
+  .card{position:relative;border:1.5px solid #dcd9d1;border-radius:7px;background:#fff;
+    padding:12px 18px 11px;margin-bottom:8px}
+  .card:before{content:"";position:absolute;left:-34px;top:27px;width:13px;height:13px;
+    border-radius:50%;background:#008f8c;border:3px solid #faf9f6}
+  .card h3{margin:0;font-size:22px;font-weight:700;letter-spacing:-.01em;color:#100f09;
+    display:flex;align-items:baseline;gap:9px}
+  .card h3 .glyph{font-family:var(--display);font-size:21px;color:#008f8c;font-style:italic}
+  .card h3 .role{color:#008f8c;font-weight:600}
+  .card h3 .pipe{color:#c9c6bd;font-weight:400}
+  .card p{margin:5px 0 0;font-size:16.5px;line-height:1.42;color:#3d3a34}
+  .card ul{list-style:none;margin:6px 0 0;padding:0}
+  .card li{font-size:15px;line-height:1.4;color:#008f8c;padding-left:21px;position:relative}
+  .card li:before{content:"\21B3";position:absolute;left:0;color:#9fc9c3}
+  .tag{position:absolute;right:17px;top:16px;font-size:10.5px;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;color:#7b8f8d;border:1.5px solid #dcd9d1;
+    border-radius:20px;padding:3px 11px;background:#faf9f6}
+
+  .bonus{border-color:#008f8c;background:#f1faf7}
+  .bonus:before{background:#efb7d8}
+  .bonus h3 .role{color:#100f09}
+  .bonus li{color:#0b6f6c}
+  .bonus li:before{color:#7fc0ba}
+  .bonus .tag{color:#008f8c;border-color:#9fd3cc;background:#fff}
+
+  .runbox{border:1.5px solid #dcd9d1;border-radius:7px;background:#fff;padding:12px 18px 13px;
+    margin-top:2px}
+  .runhead{display:inline-block;background:#100f09;color:#faf9f6;font-size:12.5px;
+    font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 13px;
+    border-radius:4px;margin-bottom:10px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:9px 16px}
+  .step{display:flex;gap:9px;align-items:flex-start}
+  .step .n{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:#008f8c;
+    color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;
+    justify-content:center;font-variant-numeric:tabular-nums}
+  .step span{font-size:15px;line-height:1.3;color:#3d3a34;padding-top:2px}
+  .step b{color:#100f09;font-weight:600}
+
+  .footer{position:absolute;left:0;right:0;bottom:0;height:96px;background:#008f8c;
+    color:#faf9f6;display:flex;align-items:center;justify-content:space-between;
+    padding:0 76px}
+  .footer .lead{font-family:var(--display);font-style:italic;font-weight:600;font-size:27px}
+  .footer .right{text-align:right;font-size:16px;line-height:1.42}
+  .footer .right b{font-weight:600}
+  .footer .right .url{font-weight:600;font-size:17px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <h1>Steal My <span class="tl">Six-Agent Setup</span></h1>
+    <span class="sub">Infographic &middot; 1200&times;1500 &middot; pairs with the LinkedIn post</span>
+  </header>
+
+  <div class="shell"><div class="fit" id="fit"><div class="sheet" id="sheet">
+    <div class="speck" style="top:58px;right:120px"></div>
+    <div class="speck" style="top:150px;right:64px;background:#efb7d8"></div>
+    <div class="speck" style="top:250px;right:150px;width:5px;height:5px"></div>
+    <div class="speck" style="top:96px;left:44px;width:5px;height:5px;background:#efb7d8"></div>
+
+    <div class="kicker">charmthirteen &middot; Stellar Agents</div>
+    <h1 class="title">Steal My <em>Six-Agent Setup</em></h1>
+    <p class="paren">(Not One Of Them Can Hit Send)</p>
+    <p class="dek">Six agents run my one-person practice. Each one owns a lane, hands to exactly
+      one place, and stops before the consequence. Here is the whole constellation, free.</p>
+
+    <div class="rail" id="rail"></div>
+
+    <div class="footer">
+      <span class="lead">Six stars, one human gate.</span>
+      <div class="right">
+        <div class="url">github.com/lexthirteen-ai/stellar-agents</div>
+        <div><b>Free.</b> Claude Code, Codex, Gemini CLI, OpenClaw, Hermes.</div>
+      </div>
+    </div>
+  </div></div></div>
+
+  <div class="bar">
+    <button class="primary" id="dl">Download JPG</button>
+    <button id="toImg">Render as image</button>
+  </div>
+  <p class="status" id="status"></p>
+  <p class="note" id="note">Saving asks you to confirm. Give the fonts three seconds to load
+    before exporting. If saving is unavailable in this view, use <b>Render as image</b> and
+    right-click or long-press to save.</p>
+  <div id="imgOut"></div>
+</div>
+
+<script>
+(function(){
+  var STARS=[
+    {g:"✦",name:"CARINA",role:"The Managing Editor",tag:"routes",
+     p:"Plans the week and routes the work, and never does any of it herself.",
+     li:["Monday you get the week's plan with three boxes to tick",
+         "She is the only star allowed to hand work sideways"]},
+    {g:"◑",name:"AURORA",role:"The Reporter",tag:"reads",
+     p:"Reads the inbox so you do not open it first thing.",
+     li:["Three replies you owe, the signals worth knowing, what to ignore",
+         "One note, not a dashboard you have to go visit"]},
+    {g:"♪",name:"LYRA",role:"The Staff Writer",tag:"drafts",
+     p:"Drafts the week's posts and the newsletter section.",
+     li:["Leaves the first line of every draft blank, on purpose",
+         "The opening has to sound like you, so she does not write it"]},
+    {g:"◆",name:"VESPER",role:"The Copy Desk",tag:"the gate",
+     p:"The gate. Nothing reaches you without going through her.",
+     li:["Names the tells, the banned words, and the rule that failed",
+         "Returns STAGED or REJECTED, and never rewrites a word"]},
+    {g:"●",name:"SELENE",role:"The Archivist",tag:"files",
+     p:"Keeps the record so the next run does not start cold.",
+     li:["Operating notes for the repo or the contractor, filed where you will find them"]},
+    {g:"✵",name:"MIRA",role:"The Ombudsman",tag:"audits",
+     p:"Audits the other five and tells on them.",
+     li:["What drifted this week, counted from the files, never from memory",
+         "A handoff that is not on the map is a rogue actor signal"]}
+  ];
+  var BONUS={g:"↻",name:"BONUS",role:"SENT Is Not On The Map",tag:"steal this first",
+    p:"The pipeline ends at STAGED. Staged means a human may now carry it across into the real tool.",
+    li:["Every star stops one step before the consequence",
+        "That last step is the only place left where you can still catch something"]};
+  var STEPS=[["You write a brief"],["<b>Carina</b> scores it and routes the lane"],
+    ["<b>Lyra</b> drafts inside that lane"],["<b>Vesper</b> stages or rejects, naming the rule"],
+    ["<b>Mira</b> notes anything that drifted"],["<b>You</b> carry it across yourself"]];
+
+  function card(s,isBonus){
+    var h='<div class="card'+(isBonus?" bonus":"")+'">';
+    h+='<span class="tag">'+s.tag+'</span>';
+    h+='<h3><span class="glyph">'+s.g+'</span>'+s.name+
+       '<span class="pipe">|</span><span class="role">'+s.role+'</span></h3>';
+    h+='<p>'+s.p+'</p><ul>';
+    for(var i=0;i<s.li.length;i++){h+='<li>'+s.li[i]+'</li>';}
+    return h+'</ul></div>';
+  }
+
+  var html="";
+  for(var i=0;i<STARS.length;i++){html+=card(STARS[i],false);}
+  html+=card(BONUS,true);
+  html+='<div class="runbox"><span class="runhead">Example Run: Start To Finish</span><div class="steps">';
+  for(var j=0;j<STEPS.length;j++){
+    html+='<div class="step"><span class="n">'+(j+1)+'</span><span>'+STEPS[j][0]+'</span></div>';
+  }
+  html+='</div></div>';
+  document.getElementById("rail").innerHTML=html;
+
+  // scale the fixed 1200px sheet into its responsive frame
+  var fit=document.getElementById("fit"), sheet=document.getElementById("sheet");
+  function scale(){
+    var s=fit.clientWidth/1200;
+    sheet.style.transform="scale("+s+")";
+  }
+  scale();
+  if(window.ResizeObserver){new ResizeObserver(scale).observe(fit);}
+  else{window.addEventListener("resize",scale);}
+
+  var status=document.getElementById("status"), imgOut=document.getElementById("imgOut"),
+      bDl=document.getElementById("dl"), dl=null;
+  bDl.disabled=true;
+  function unavailable(){
+    bDl.hidden=true;
+    document.getElementById("note").innerHTML=
+      "Saving files is not available in this view, which is normal for a shared link. "+
+      "Use <b>Render as image</b>, then right-click or long-press to save it.";
+  }
+  if(window.claude&&window.claude.use){
+    window.claude.use("downloads").then(function(d){
+      dl=d; if(d){bDl.disabled=false;} else {unavailable();}
+    },unavailable);
+  } else {unavailable();}
+
+  function shoot(){
+    var prev=sheet.style.transform, prevOv=fit.style.overflow;
+    sheet.style.transform="none"; fit.style.overflow="visible";
+    return html2canvas(sheet,{width:1200,height:1500,scale:1,useCORS:true,
+      backgroundColor:"#faf9f6",logging:false}).then(function(c){
+        sheet.style.transform=prev; fit.style.overflow=prevOv; return c;
+      },function(e){sheet.style.transform=prev; fit.style.overflow=prevOv; throw e;});
+  }
+
+  bDl.onclick=function(){
+    status.textContent="Rendering...";
+    shoot().then(function(c){
+      return new Promise(function(res,rej){
+        c.toBlob(function(b){b?res(b):rej({code:"bad_request"});},"image/jpeg",0.95);
+      });
+    }).then(function(b){
+      return dl.save({filename:"charmthirteen-stellar-agents-setup.jpg",data:b});
+    }).then(function(){status.textContent="Saved.";})
+      .catch(function(e){
+        var c=(e&&e.code)||"";
+        status.textContent = c==="declined" ? "Save declined."
+          : c==="rate_limited" ? "Too many prompts. Wait a moment, then retry."
+          : "Saving is unavailable here. Use Render as image instead.";
+      });
+  };
+
+  document.getElementById("toImg").onclick=function(){
+    var b=this; b.disabled=true; status.textContent="Rendering...";
+    shoot().then(function(c){
+      imgOut.innerHTML="";
+      var fig=document.createElement("figure"); fig.style.margin="0";
+      var im=new Image(); im.src=c.toDataURL("image/jpeg",0.95);
+      im.alt="Stellar Agents setup infographic";
+      var cap=document.createElement("figcaption");
+      cap.textContent="charmthirteen-stellar-agents-setup.jpg — right-click or long-press to save";
+      fig.appendChild(im); fig.appendChild(cap); imgOut.appendChild(fig);
+      status.textContent="Rendered. Right-click or long-press to save.";
+      b.disabled=false;
+    }).catch(function(){status.textContent="Render failed."; b.disabled=false;});
+  };
+})();
+</script>
