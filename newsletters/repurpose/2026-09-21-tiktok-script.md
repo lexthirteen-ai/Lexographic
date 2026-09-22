@@ -23,7 +23,7 @@ Source: Artificially Designed, September 21, 2026. Flavor: spicy take. Target: 6
 - 0-2s. Talking head only. Let the line land cold. **Essential.**
 - 12-25s. Screen recording of a terminal showing `git checkout <hash>` resolving to a branch. Sells the mechanism better than words. **Nice to have.**
 - 25-32s. Text overlay: "Plugin4Shell" with the four tool names stacked underneath. **Essential**, since the name is the searchable hook.
-- 40-55s. Text overlay of the version numbers, on screen the whole time she says them. People will screenshot this. **Essential.**
+- 40-55s. Text overlay of the version numbers, on screen the whole time you say them. People will screenshot this. **Essential.**
 - 55-60s. Talking head, no overlay. Soft close.
 
 ## Caption

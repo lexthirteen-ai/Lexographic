@@ -1,43 +1,49 @@
 # LinkedIn: Steal my six-agent setup
 
-Source: Stellar Agents launch, tied to the Artificially Designed issue of September 21, 2026.
-Format: "steal my setup" listicle, paired with the infographic.
+Source: Stellar Agents launch. Pairs with the infographic.
+Framework: emotion-to-action, 6 steps. Link lives in the first comment, not the body.
 
 ---
 
-Six agents run my one-person practice. Not one of them can hit send.
+## POST
 
-That constraint is the whole design. Here's the setup (steal it):
+Six agents ran my business overnight. Not one of them can hit send.
 
-⭐ **CARINA, the Managing Editor.** She plans the week and routes the work, and she never does any of it herself.
+That constraint is the whole design, and it took me three rewrites to get there.
+
+Here's the setup (steal it):
+
+⭐ **CARINA, the Managing Editor.** Plans the week and routes the work, and never does any of it.
 ↳ Monday morning you get the week's plan with three boxes to tick
-↳ Scored against your priorities, not hers
-↳ She's the only one allowed to hand work sideways, which is what keeps the rest from freelancing
+↳ Scored against your priorities, not the tool's
+↳ The only one allowed to hand work sideways, which keeps the rest from freelancing
 
-🌅 **AURORA, the Reporter.** She reads the inbox so you don't open it first thing.
+🌅 **AURORA, the Reporter.** Reads the inbox so you don't have to open it first thing.
 ↳ Three replies you owe, the signals worth knowing, and what to ignore
 ↳ All of it in one note, not a dashboard you have to go visit
 
-🎵 **LYRA, the Staff Writer.** She drafts the week's posts and the newsletter section.
-↳ She leaves the first line of every draft blank
-↳ That's deliberate. The opening is the part that has to sound like you, so she doesn't get to write it
+🎵 **LYRA, the Staff Writer.** Drafts the week's posts and the newsletter section.
+↳ Leaves the first line of every draft blank
+↳ That's deliberate. The opening has to sound like you, so it doesn't get written for you
 
-🌙 **VESPER, the Copy Desk.** She's the gate. Nothing reaches you without going through her.
-↳ She names the tells, the banned words, and the specific rule that failed
-↳ She returns STAGED or REJECTED, and she never rewrites a word
+🌙 **VESPER, the Copy Desk.** The gate. Nothing reaches you without going through it.
+↳ Names the tells, the banned words, and the specific rule that failed
+↳ Returns STAGED or REJECTED, and never rewrites a word
 ↳ Staged means a human may now carry it. It does not mean sent
 
-📁 **SELENE, the Archivist.** She keeps the record so the next run isn't starting cold.
+📁 **SELENE, the Archivist.** Keeps the record so the next run isn't starting cold.
 ↳ Operating notes for the repo or the contractor, filed where you'll actually find them
 
-🔭 **MIRA, the Ombudsman.** She audits the other five and tells on them.
+🔭 **MIRA, the Ombudsman.** Audits the other five and tells on them.
 ↳ What drifted this week, counted from the files, never from memory
-↳ A handoff that isn't on the map is a rogue actor signal, and she reports it
+↳ A handoff that isn't on the map is a rogue actor signal, and it gets reported
+
+They run on my cloud environment now, so the laptop doesn't have to be open. I wake up and the week is planned, the inbox is triaged, and the drafts are staged.
 
 Here's an example run, start to finish:
 
 1. You write a brief.
-2. Carina scores it, picks the lane, and routes it. She does not execute.
+2. Carina scores it, picks the lane, and routes it. No execution.
 3. Lyra drafts inside that lane, first line left blank.
 4. Vesper checks it against the output contract and stages or rejects it, naming the rule.
 5. Mira notes anything that drifted.
@@ -49,19 +55,43 @@ And the part I'd steal first if I were you:
 
 Trust isn't the reason. That last step is the only place left where I can still catch something, and I would rather keep it than save the twenty seconds.
 
-All six are free, they install into Claude Code, Codex, Gemini CLI, OpenClaw and Hermes, and the files are meant to be edited.
+Most people building this stuff automate right through that step, because it's the one that feels safe to skip. Then the first thing that goes out wrong goes out under their name, at scale, while they're asleep.
 
-github.com/lexthirteen-ai/stellar-agents
-
-If you're running your own content, inbox, planning and ops out of one head, take the whole thing.
+All six are free, they install into Claude Code, Codex, Gemini CLI, OpenClaw and Hermes, and the files are meant to be edited. Links in the comments.
 
 What's the last step you still do yourself?
 
 ---
 
-**Posting notes**
+## FIRST COMMENT (post immediately after)
 
-- Pair with the infographic as the single image. The post carries the detail, the image carries the scan.
-- The closing question is real. Reply to responses.
-- The strongest line is "Not one of them can hit send." Do not bury it, and do not soften it.
-- Best window: Tuesday or Wednesday, 8 to 10 AM CDT, and give it a few days' distance from the Plugin4Shell carousel so the two do not compete.
+Two links, both free:
+
+Take the kit 👉 github.com/lexthirteen-ai/stellar-agents
+
+Want the thinking behind it? I write Artificially Designed every week, on building with AI without handing over the last step 👉 [SUBSCRIBE LINK NEEDED]
+
+---
+
+## Framework map
+
+- **Step 1, Target:** solo consultants, freelancers and founders running their own content, inbox, planning and ops out of one head.
+- **Step 2, Collective Fear:** being buried by your own operation, and the twin fear that automating it away leaves nothing recognizably yours.
+- **Step 3, Message Fear Implicitly:** the overnight line. If the work was already done when they woke up, the reader is doing the arithmetic on their own 11pm.
+- **Step 4, Tease the Solve:** "That constraint is the whole design," placed in the second line so they stay.
+- **Step 5, Amplify:** "goes out under their name, at scale, while they're asleep." The fear is never named, only staged.
+- **Step 6, Demonstrate:** the six agents, the run, and the gate, all concrete and all free.
+
+**Fear identified:** losing authorship of your own work, in both directions. Drowning in it, or automating until none of it is yours.
+
+**Service connected:** the free Stellar Agents kit, with Artificially Designed as the learn-more path.
+
+---
+
+## Posting notes
+
+- **The subscribe link is a placeholder.** Send me the Beehiiv URL and I'll drop it in. I won't guess it.
+- Hook clears the "see more" fold at two lines and doesn't open with "I", per the framework's LinkedIn rule.
+- No link in the post body on purpose. LinkedIn suppresses reach on outbound links, so both go in the first comment, posted within a minute.
+- Pair with the infographic as the single image.
+- Best window: Tuesday or Wednesday, 8 to 10 AM CDT. Keep a few days between this and the Plugin4Shell carousel so they don't compete.

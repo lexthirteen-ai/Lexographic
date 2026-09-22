@@ -37,6 +37,6 @@ that's the part I keep chewing on
 **Posting notes**
 
 - The first version is the one to lead with. It's the most postable and the least self-serious.
-- The second is better if she wants replies, because the admission invites people to admit the same thing.
+- The second is better if you want replies, because the admission invites people to admit the same thing.
 - Post standalone, not as a link drop. Let the newsletter find them later.
 - Lowercase throughout is deliberate for this platform. Do not clean it up.
