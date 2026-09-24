@@ -1,4 +1,4 @@
-# Threads: six agents, none of them can send
+# Threads: a folder called staged
 
 Source: Stellar Agents launch. Casual micro-observation register.
 
@@ -6,11 +6,11 @@ Source: Stellar Agents launch. Casual micro-observation register.
 
 ## Post (lead with this one)
 
-six agents ran my business last night while I was asleep
+everything my agents make lands in a folder called staged
 
-none of them are allowed to hit send
+nothing has ever left it without me
 
-that constraint took three rewrites and it's the only reason I trust the whole thing
+six of them, running on a schedule, finishing before I open the laptop, all of it stopping in the same place
 
 ---
 

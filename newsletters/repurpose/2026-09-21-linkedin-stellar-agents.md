@@ -7,9 +7,11 @@ Framework: emotion-to-action, 6 steps. Link lives in the first comment, not the 
 
 ## POST
 
-Six agents ran my business overnight. Not one of them can hit send.
+Everything my agents make lands in a folder called staged.
 
-That constraint is the whole design, and it took me three rewrites to get there.
+Nothing has ever left it without me.
+
+Six agents run my practice on a schedule. They plan the week, triage the inbox, draft the posts, check the drafts, keep the record, and audit each other. All of it finishes before I open the laptop, and all of it stops in the same place.
 
 Here's the setup (steal it):
 
@@ -38,7 +40,7 @@ Here's the setup (steal it):
 ↳ What drifted this week, counted from the files, never from memory
 ↳ A handoff that isn't on the map is a rogue actor signal, and it gets reported
 
-They run on my cloud environment now, so the laptop doesn't have to be open. I wake up and the week is planned, the inbox is triaged, and the drafts are staged.
+They run on my own cloud scheduler, so nothing waits on me to start it. What waits on me is the last step.
 
 Here's an example run, start to finish:
 
@@ -77,8 +79,8 @@ Want the thinking behind it? I write Artificially Designed every week, on buildi
 
 - **Step 1, Target:** solo consultants, freelancers and founders running their own content, inbox, planning and ops out of one head.
 - **Step 2, Collective Fear:** being buried by your own operation, and the twin fear that automating it away leaves nothing recognizably yours.
-- **Step 3, Message Fear Implicitly:** the overnight line. If the work was already done when they woke up, the reader is doing the arithmetic on their own 11pm.
-- **Step 4, Tease the Solve:** "That constraint is the whole design," placed in the second line so they stay.
+- **Step 3, Message Fear Implicitly:** "nothing has ever left it without me." The reader supplies the counter-scenario, which is work leaving without them.
+- **Step 4, Tease the Solve:** "all of it stops in the same place," placed before the roster so they stay for the mechanism.
 - **Step 5, Amplify:** "goes out under their name, at scale, while they're asleep." The fear is never named, only staged.
 - **Step 6, Demonstrate:** the six agents, the run, and the gate, all concrete and all free.
 
@@ -92,6 +94,7 @@ Want the thinking behind it? I write Artificially Designed every week, on buildi
 
 - **The subscribe link is a placeholder.** Send me the Beehiiv URL and I'll drop it in. I won't guess it.
 - Hook clears the "see more" fold at two lines and doesn't open with "I", per the framework's LinkedIn rule.
+- The old hook implied the agents didn't run. They do, on a schedule. This one puts the gate at the output, where it actually sits.
 - No link in the post body on purpose. LinkedIn suppresses reach on outbound links, so both go in the first comment, posted within a minute.
 - Pair with the infographic as the single image.
 - Best window: Tuesday or Wednesday, 8 to 10 AM CDT. Keep a few days between this and the Plugin4Shell carousel so they don't compete.
