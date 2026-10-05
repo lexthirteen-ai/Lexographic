@@ -1,0 +1,213 @@
+# Beehiiv paste-ready copy, October 5, 2026
+
+Everything above the first rule goes in Beehiiv's own fields, not in the post body.
+Everything below it is the body, with the three images dropped at the marked points.
+
+---
+
+**Post title field:** Artificially Designed Issue 17: The Record
+
+**Subject line field:** four ways to watch, none to know
+
+**Preview text field:** An AI summary that invented nothing, and still got it wrong.
+
+**Header image:** 1200x600px. Soft System mode, a paper chart on a desk with two entries contradicting each other, one lamp, warm light, nothing on a screen.
+
+**Images to upload** (export all three from https://claude.ai/artifact/JSxQTiB3xcDPydb7sz5jcK, display each at 600 wide):
+
+| File | Goes after |
+|---|---|
+| `charmthirteen-issue17-03-watch-versus-know.jpg` | "I went looking for **why** and could not find it." |
+| `charmthirteen-issue17-01-inhaler-contradiction.jpg` | "A reviewer scanning for invention finds nothing wrong." |
+| `charmthirteen-issue17-02-three-test-questions.jpg` | "Does it catch a hidden contradiction?" |
+
+---
+
+Last week was about fences. This week is about whether you can say why an agent went where it went.
+
+## 🔨 Built Wrong
+
+Last week we talked about fences. What an agent may touch, where the lane ends, who carries the work across. Fences are the part people build first because they are the part you can draw.
+
+This week I want the harder one. A fence tells you what an agent was allowed to do. It does not tell you why it did the thing it did.
+
+OpenAI introduced **dots** at DevDay on September 29. I missed the livestream, but two things stood out. First, they remind me of OpenClaw agents, the same ability to keep going back and forth on a task regardless of what is happening around them, now living in their own cloud environment. Second, shout out to OpenAI's marketing, because calling something this capable "dots" makes AI a lot less intimidating. I call them dipping dots. They are adorable and delicious and truth be told, I can be tricked.
+
+Here is what they do. Each dot works in its own computer, in its own browser, with only the apps you give it permission to use. You hand it a project and keep adding tasks while it works. It knows your goals and standards. It works where you work: ChatGPT, desktop, phone, Slack, Teams. It runs on GPT-6 Astra.
+
+And the watching is genuinely good. Four ways:
+
+- **Activity View.** Delegated tasks, progress, results, and when it needs you.
+- **Cloud computer.** Open your dot's machine and browser anytime, watch live or take over.
+- **Monitoring.** Automated classifiers catch unauthorized behavior and can pause or stop it.
+- **Messages.** Status, questions and approval requests where you already are.
+
+That is four ways to see **what**. I went looking for **why** and could not find it.
+
+When did it decide? What did it weigh? What happened in the gap between the task I gave it and the thing it came back with? The Medicare agent we talked about last week is the version of this with consequences, and what still sits with me is the route. Nobody could reconstruct it.
+
+Here is where I have landed. A record you could hand to an auditor needs three things:
+
+1. **What it saw.** The systems and data it reached. Activity views cover this well.
+2. **What it meant.** The terms and definitions it reasoned with. Almost nobody covers this.
+3. **What it was allowed to do.** Permissions cover this.
+
+The middle one is the gap, and it is bigger than it looks.
+
+Here is the version of that I spent last week inside.
+
+A chart says **continue the inhaler** on March 1. The same chart says **inhaler stopped** on March 15. An AI summary of that chart says the patient continues the inhaler.
+
+Read that again, because the summary invented nothing. Every word of it appears in the source. What it did was quietly drop the half that disagreed, and there is no hallucination to catch, no fabricated drug, no made-up dose. A reviewer scanning for invention finds nothing wrong.
+
+That is only solvable if the record holds what was said, when it was said, and whether it is still true. Strip the time and the status out and a contradiction and an update look identical, to a person and to an agent.
+
+The naming version is worse. On one public benchmark I worked with, about 65,000 medication orders arrived as free text with no standard drug code. Same drug, three ways: a brand name, a generic name, and a pharmacy string of abbreviations. Our checker declined all but one of them. The logic was fine. It had nothing shared to stand on.
+
+You cannot log your way to meaning after the fact. The terms have to be defined before the agent starts, and that is a design decision somebody makes months earlier, usually without knowing an agent will one day depend on it.
+
+---
+
+## ⚡ One Slot
+
+**Lovable: live voice conversations**, shipped October 1. You can now put a real spoken conversation inside an app you built in Lovable. Same release added EU data processing and IP allowlisting on Business and Enterprise. ([changelog](https://docs.lovable.dev/changelog))
+
+**What is the job.** Let a non-technical builder add a voice interface to an app without standing up an audio stack, a telephony provider, or a speech pipeline.
+
+**Can it do that job, not can it do more.** Yes, and the restraint is the appeal. It is a feature inside the thing you already built, not a platform you now have to run. If you have a Lovable MVP, this is an afternoon.
+
+**What does it touch that is hard to undo.** This is the one. A voice feature in a shipped app is live contact with a real person, in real time, with no draft step and nothing staged. Text gives you a moment to look. Voice does not. If your app serves anyone in a regulated context, the recording, consent and retention questions arrive the moment you turn it on, and they arrive from the user's side of the screen.
+
+**What would have to be true to let it run unwatched.** You would need a transcript you can search, a rule for what it must never discuss, and a way to find out it broke that rule without a customer telling you. Until then, watch it.
+
+**One honest caveat.** I have not run this yet. Three of those four questions I can answer from the changelog and from how the feature is built, and the fourth is a question about your situation rather than the tool's. When I have put it through something real I will say so here.
+
+---
+
+## 🌎 In the News
+
+🎙 **Lovable shipped live voice** on October 1, plus EU data processing and IP allowlisting for Business and Enterprise. ([changelog](https://docs.lovable.dev/changelog))
+
+🤖 **Replit's Agent added model choice**, GPT-6.1 Sol in Max Mode and Claude Sonnet 5.5 in Power Mode, on October 2. The quieter item in the same release is an AI Integrations tool for lead scoring and request routing that handles no API keys, which removes the step most non-technical builders get stuck on. ([updates](https://docs.replit.com/updates))
+
+🧠 **Both models are days old.** Sonnet 5.5 landed September 28, GPT-6.1 Sol on September 29. Two builder tools shipped support inside a week. ([timeline](https://llmgateway.io/timeline))
+
+🤫 **Cursor has been quiet.** Last changelog entry is September 23, with Security Review and Rollouts bots for Teams and Enterprise. Nothing since. Worth noticing when everyone else is shipping weekly. ([changelog](https://cursor.com/changelog))
+
+🇦🇺 **A footnote to last week's story that changes the shape of it.** The Medicare breach was June 18. OpenAI emailed an open mailbox at Services Australia on September 10. Services Australia saw it September 11 and alerted the Australian Signals Directorate September 15. Eighty-four days, and they found out because a company chose to send an email. Services Australia also says the agent wrote files to an internal server, so this was never only read access. ([ABC](https://www.abc.net.au/news/2026-09-24/what-we-know-about-the-openai-medicare-hack/107189452) · [CNBC](https://www.cnbc.com/2026/09/24/openai-agent-hacked-australian-government-website-.html))
+
+---
+
+## ✅ Before You Ship
+
+Pick one task you handed an agent last week. Not your scariest one, your most routine one. Now answer three questions about it, in writing, without opening the tool:
+
+1. What systems and files did it actually reach?
+2. Which definitions did it use for the terms in your brief?
+3. What was it permitted to do that it did not end up doing?
+
+Most people can answer the first. Almost nobody can answer the second. The third one tells you how much room you left.
+
+If you cannot answer all three, the gap sits in the record rather than in your attention, and that record is the thing to build before you add another agent.
+
+---
+
+## 💻 Prompt for Productivity
+
+```
+I handed this task to an AI agent and approved the result without
+reviewing the intermediate steps.
+
+TASK I GAVE IT: [paste the brief]
+WHAT CAME BACK: [paste or summarize the output you approved]
+TOOL: [Claude Code, Codex, Cursor, Lovable, a dot, other]
+
+Work backward and tell me:
+1. What files, repos, packages, or systems this task most likely
+   required it to reach.
+2. Which of those came from sources I never explicitly named.
+3. Which terms in my brief could be read more than one way, and
+   which reading it probably used.
+4. The single checkpoint that, had it existed, would have caught
+   the most.
+
+Do not reassure me. If the honest answer to any of these is "you
+cannot tell from here," say that, and tell me what I would need to
+look at instead.
+```
+
+**When to use it.** After any agent run where you read the summary and not the steps, which for most of us is most of them.
+
+**What it does.** It reconstructs the blast radius of a handoff you already made, which is a more useful question than whether the output looks right. Question three is the new one, and it is the one that surfaces the meaning problem in your own work.
+
+**Tip.** Run it on your most routine recurring task. The scary ones you are already watching.
+
+---
+
+## 🗓 Open Calls
+
+**Claude Loves Lovable, five parts, starts October 28.** I am teaching this with Central Exchange, virtual on Zoom, 8:30 to 10:00 AM CDT each session. Hands on. You build alongside me and leave every session with prompts and a workflow you can use the same day. Session one sends you out with a finished one-page brand system, a seeded Lovable project, and a Claude skill installed.
+
+- Oct 28, Brand Before You Build
+- Nov 4, Build Your Pitch Deck
+- Nov 11, Build Your MVP
+- Nov 18, Build Your Website
+- Dec 2, Claude Code Loves Lovable, optional
+
+Free for CX members, one voucher for CX partners, $25 otherwise. **Signing up for the first session enrolls you in all five**, and spaces are capped so there is room for real help. [Register](https://members.centralexchange.org/events/details/virtual-claude-loves-lovable-brand-before-you-build-26154?calendarMonth=2026-10-01)
+
+**Houston We Have a Build, with SOTV Creators Collective.** I am partnering with SOTV on a programme for students who already have Python and data science behind them and want the next thing: forward deployment engineering, product thinking, design thinking. Career-ready skills rather than another tutorial.
+
+The target is getting up to six SOTV students ready to compete in **Cosmo Hacks**, a free online hackathon running **December 18 to 21**. They will learn to build with AI coding tools the way it actually works: build fast, then read the output, check it, and correct it. Which, now that I write it down, is this entire issue aimed at someone fifteen years younger than my usual reader.
+
+Cosmo Hacks is open to ages 13 to 18, teams of up to four, theme "Tech for Student and Community Life". Submissions close 12:00 PM CST on December 21 with a public repo and a short demo video. [cosmohacks.com](https://www.cosmohacks.com/)
+
+**Kansas City**
+
+- **Oct 16** ALL ACCESS EXPO, Kauffman Foundation Conference Center
+- **Oct 17** Hustle 101 Pitch Competition, Keystone Innovation District
+- **Oct 21** Tech Venture Studio product bootcamp, UMKC Innovation Center
+- **Nov 15** NXTSTAGE Startup-Enterprise Summit
+- **November** DevFest KC, date to be announced
+
+**If you would rather be on the stage than in the room**
+
+- **AI Conf Asia 2027**, Kathmandu, Jan 8 to 10. Submissions close **November 1**. This is the one with a clock on it.
+- **Agent Conference 2027**, New York, May 17 to 18. Proposals open, rolling, no deadline.
+- **Rise of AI 2027**, Berlin and virtual, May 12. Speaker call open.
+
+---
+
+## 🔭 Next From Me
+
+**Design sessions are this week, and last week was prep.** All of it, for Orinyx.
+
+Here is what Orinyx is, since it is the reason this issue exists. Hospitals are adopting AI that reads a patient's chart and writes a summary, or suggests medication orders. Orinyx sits behind those tools. It compares what the AI said against the source, the official drug label or the original chart, and flags what is not supported.
+
+Before anyone can trust a checker, the checker has to be tested. We organized that around three questions:
+
+1. **Is the answer right?** When Orinyx judges a medication order, does that match the official label?
+2. **Does it refuse to guess?** When the data is messy or incomplete, does it say "I don't know"?
+3. **Does it catch a hidden contradiction?** The inhaler, from earlier.
+
+**Where the test data came from.** We could not use real patient records, and would not. So we used Synthetic Hospital, a public repo of about 1,270 fictional patients generated by AI, around 900 of them with dosed home medications. Four reasons: every patient is invented and we screened every record for anything resembling a real identifier anyway, none excluded. It is MIT licensed, so commercial testing is permitted. The patients have the realistic shape a live system would send, ages and conditions and allergies and medication lists. And it arrives in three parts, so we gave each one job. One part was a stress run of about 5,400 medication claims to measure speed and how often Orinyx declines. One part is practice. The last is reserved for a single scored exam, written by a tester and a clinical reviewer, and the engineer who builds Orinyx never sees those items.
+
+That last part matters more than it sounds. A test you wrote yourself, or tuned against, only proves you can pass your own test.
+
+**The scored exam has not been taken yet, so there is no independent grade to report.** When there is one, you will read it here, whatever it says.
+
+What I did not expect was how much of this turned out to be a vocabulary problem rather than a model problem. One thing with many names and nothing shared to stand on. Loose mapping that quietly resolves a drug class to one specific pill, or one salt to another with a different dose, and hands you a confident wrong answer. And meaning that includes time and status, without which a contradiction and an update are indistinguishable. A person reading a messy chart notices the mess. An agent takes what it is handed and acts.
+
+**Orinyx is in AfroTech.** I stayed up until 2 a.m. testing ahead of these sessions and the first phase is finally real. Thank you to Samantha Dorisca for the piece. [Read it here.](https://afrotech.com/alexandria-hamilton-created-an-independent-safety-layer-for-clinical-ai) The rest you will have to wait for.
+
+**And the thing this is all building toward.** This is the thinking behind a framework I have been developing called CHARM, which looks at how semantic modeling, domain-specific AI and governance work together to make systems more reliable. It is still emerging and I would rather build it in the open than present it finished. Over the next three issues I am unpacking the layers: **Design for Meaning**, **Design for Context**, and **Design for Trust**.
+
+Healthcare is where most of my examples come from, because terminology and mistakes matter enormously there. The design questions are not healthcare's alone. Finance, government, logistics and HR all have the same four words for one thing.
+
+---
+
+## 💌 One Ask
+
+Last week I asked what decision you would hand to an agent if you knew it would stop before acting.
+
+This week: **think of something an agent did for you that worked.** Could you explain, to someone who was not there, why it did it that way? Reply and tell me. I read every one.
