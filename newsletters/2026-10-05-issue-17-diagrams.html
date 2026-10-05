@@ -1,0 +1,261 @@
+<title>Issue 17 Diagrams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@400;500;600;700&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+  :root{
+    --bg:#faf9f6;--fg:#100f09;--line:#d8d6cf;--soft:#6f6a5e;--card:#fff;
+    --teal:#008f8c;--btn-bg:#100f09;--btn-fg:#faf9f6;
+    --display:"Playfair Display",Georgia,"Times New Roman",serif;
+    --body:"Montserrat","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --bg:#131209;--fg:#faf9f6;--line:#33301f;--soft:#9a948a;--card:#1b1a10;
+    --btn-bg:#bbe3d9;--btn-fg:#100f09;}}
+  :root[data-theme="dark"]{--bg:#131209;--fg:#faf9f6;--line:#33301f;--soft:#9a948a;
+    --card:#1b1a10;--btn-bg:#bbe3d9;--btn-fg:#100f09;}
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--fg);font-family:var(--body);margin:0}
+  .wrap{max-width:1000px;margin:0 auto;padding-inline:16px;padding-block:28px 52px}
+  .masthead{display:flex;flex-wrap:wrap;align-items:baseline;gap:7px 14px;
+    border-bottom:1px solid var(--line);padding-bottom:13px;margin-bottom:20px}
+  .masthead h1{font-family:var(--display);font-weight:700;font-size:clamp(22px,4.2vw,31px);margin:0}
+  .masthead .sub{font-size:12.5px;color:var(--soft)}
+  .tl{color:var(--teal)}
+  .frame{width:100%;aspect-ratio:3/2;overflow:hidden;position:relative;border:1px solid var(--line)}
+  .frame .sheet{position:absolute;top:0;left:0;transform-origin:top left}
+  .nav{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:14px}
+  button{font-family:var(--body);font-weight:600;font-size:13px;cursor:pointer;border-radius:2px;
+    border:1px solid var(--line);background:transparent;color:var(--fg);padding:9px 14px}
+  button:hover{background:var(--line)}
+  button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+  button.primary{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+  button[disabled]{opacity:.45;cursor:not-allowed}
+  .dots{display:flex;gap:6px;margin-left:auto}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--line);border:0;padding:0}
+  .dot[aria-current="true"]{background:var(--teal)}
+  .status{font-size:12.5px;color:var(--soft);min-height:1.3em;margin:6px 0 0}
+  .note{font-size:12px;line-height:1.6;color:var(--soft);background:var(--card);
+    border:1px solid var(--line);padding:11px 13px;border-radius:2px;margin-top:10px}
+  #imgOut{display:flex;flex-direction:column;gap:13px;margin-top:13px}
+  #imgOut figure{margin:0}
+  #imgOut img{width:100%;max-width:460px;display:block;border:1px solid var(--line)}
+  #imgOut figcaption{font-size:11.5px;color:var(--soft);margin-top:4px}
+
+  /* ===== SHEET: fixed 1200x800 ===== */
+  .sheet{width:1200px;height:800px;background:#faf9f6;color:#100f09;position:relative;
+    padding:62px 72px;font-family:var(--body);overflow:hidden;display:flex;flex-direction:column}
+  .sheet .eyebrow{font-size:16px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+    color:#008f8c;margin-bottom:10px}
+  .sheet h2{font-family:var(--display);font-weight:700;font-size:53px;line-height:1.05;
+    letter-spacing:-.02em;margin:0 0 6px}
+  .sheet h2 em{font-style:normal;color:#008f8c}
+  .sheet .mark{position:absolute;right:72px;bottom:46px;font-family:var(--display);
+    font-style:italic;font-size:20px;color:#a8a49a}
+  .sheet .foot{position:absolute;left:72px;bottom:46px;font-size:17px;color:#6f6a5e;max-width:860px;line-height:1.45}
+  .stage{flex:1;display:flex;flex-direction:column;justify-content:center;padding-bottom:34px}
+
+  /* diagram 1: timeline */
+  .tl-row{display:flex;align-items:stretch;gap:0;margin-bottom:30px}
+  .tl-item{flex:1;border-left:6px solid #008f8c;padding:20px 28px;background:#fff;
+    border-top:1.5px solid #dcd9d1;border-right:1.5px solid #dcd9d1;border-bottom:1.5px solid #dcd9d1}
+  .tl-item.drop{border-left-color:#efb7d8}
+  .tl-item .d{font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#899499}
+  .tl-item .q{font-family:var(--display);font-size:37px;margin-top:8px;line-height:1.15}
+  .tl-gap{width:26px}
+  .summary{border:3px solid #100f09;background:#fff;padding:28px 32px;position:relative}
+  .summary .lbl{font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#899499}
+  .summary .txt{font-family:var(--display);font-size:45px;margin-top:8px;line-height:1.1}
+  .flags{display:flex;gap:38px;margin-top:24px}
+  .flag{font-size:19px;color:#3d3a34;display:flex;gap:9px;align-items:flex-start;line-height:1.4}
+  .flag b{font-weight:700}
+  .flag .k{color:#008f8c;font-weight:700}
+  .flag .k.bad{color:#c77fae}
+
+  /* diagram 2: three questions */
+  .qs{display:flex;flex-direction:column;gap:22px}
+  .q-row{display:flex;gap:22px;align-items:flex-start;border:1.5px solid #dcd9d1;background:#fff;
+    border-radius:9px;padding:24px 30px}
+  .q-row .n{flex:0 0 auto;width:54px;height:54px;border-radius:50%;background:#008f8c;color:#fff;
+    font-size:26px;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .q-row .t{font-family:var(--display);font-size:35px;line-height:1.15;margin:0}
+  .q-row .s{font-size:20px;color:#3d3a34;margin:7px 0 0;line-height:1.42}
+
+  /* diagram 3: two columns */
+  .cols{display:grid;grid-template-columns:1fr 46px 1fr;gap:0;align-items:stretch}
+  .col{border:1.5px solid #dcd9d1;background:#fff;border-radius:9px;padding:30px 34px}
+  .col h3{font-size:14px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:#899499;margin:0 0 14px}
+  .col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:15px}
+  .col li{font-size:23px;line-height:1.3;color:#100f09;padding-left:26px;position:relative}
+  .col li:before{content:"";position:absolute;left:0;top:9px;width:13px;height:13px;
+    border-radius:50%;background:#bbe3d9}
+  .col.right li:before{background:#008f8c}
+  .col.right li.gap{color:#100f09;font-weight:700}
+  .col.right li.gap:before{background:#efb7d8}
+  .col.right li.gap span{display:block;font-size:16px;font-weight:500;color:#6f6a5e;margin-top:3px}
+  .vs{display:flex;align-items:center;justify-content:center;font-family:var(--display);
+    font-style:italic;font-size:21px;color:#a8a49a}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <h1>Issue 17 <span class="tl">Diagrams</span></h1>
+    <span class="sub">3 images &middot; 1200&times;800 &middot; display at 600 wide in the body</span>
+  </header>
+
+  <div class="frame" id="frame"></div>
+  <div class="nav">
+    <button id="prev" aria-label="Previous">&larr;</button>
+    <button id="next" aria-label="Next">&rarr;</button>
+    <div class="dots" id="dots"></div>
+  </div>
+  <div class="nav">
+    <button class="primary" id="dlOne">Download this image</button>
+    <button id="dlAll">Download all 3</button>
+    <button id="toImages">Render all as images</button>
+  </div>
+  <p class="status" id="status"></p>
+  <p class="note" id="note">Each save asks you to confirm. Give the fonts three seconds to load before exporting.</p>
+  <div id="imgOut"></div>
+</div>
+
+<div id="renderLayer" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:1200px"></div>
+
+<script>
+(function(){
+  var SHEETS=[
+    {label:"inhaler-contradiction", build:function(){
+      return '<span class="eyebrow">Nothing was invented</span>'+
+      '<h2>The summary that dropped <em>half the chart</em></h2>'+
+      '<div class="stage">'+
+        '<div class="tl-row">'+
+          '<div class="tl-item"><div class="d">March 1 &middot; chart</div><div class="q">&ldquo;Continue the inhaler.&rdquo;</div></div>'+
+          '<div class="tl-gap"></div>'+
+          '<div class="tl-item drop"><div class="d">March 15 &middot; chart</div><div class="q">&ldquo;Inhaler stopped.&rdquo;</div></div>'+
+        '</div>'+
+        '<div class="summary"><div class="lbl">What the AI summary said</div>'+
+          '<div class="txt">&ldquo;Patient continues the inhaler.&rdquo;</div></div>'+
+        '<div class="flags">'+
+          '<div class="flag"><span class="k">&check;</span><span><b>Invented nothing.</b> Every word appears in the source.</span></div>'+
+          '<div class="flag"><span class="k bad">&times;</span><span><b>Dropped the half that disagreed.</b> No hallucination to catch.</span></div>'+
+        '</div>'+
+      '</div>'+
+      '<div class="foot">Solvable only if the record holds what was said, when, and whether it is still true.</div>';
+    }},
+    {label:"three-test-questions", build:function(){
+      return '<span class="eyebrow">How we test a checker</span>'+
+      '<h2>Three questions, before anyone <em>trusts it</em></h2>'+
+      '<div class="stage"><div class="qs">'+
+        '<div class="q-row"><div class="n">1</div><div><p class="t">Is the answer right?</p>'+
+          '<p class="s">When it judges a medication order, does that match the official label?</p></div></div>'+
+        '<div class="q-row"><div class="n">2</div><div><p class="t">Does it refuse to guess?</p>'+
+          '<p class="s">When the data is messy or incomplete, does it say &ldquo;I don&rsquo;t know&rdquo;?</p></div></div>'+
+        '<div class="q-row"><div class="n">3</div><div><p class="t">Does it catch a hidden contradiction?</p>'+
+          '<p class="s">Two chart entries that disagree, and a summary that quietly keeps one.</p></div></div>'+
+      '</div></div>'+
+      '<div class="foot">A test you wrote yourself only proves you can pass your own test.</div>';
+    }},
+    {label:"watch-versus-know", build:function(){
+      return '<span class="eyebrow">Observability</span>'+
+      '<h2>Four ways to watch. None of them say <em>why</em>.</h2>'+
+      '<div class="stage"><div class="cols">'+
+        '<div class="col"><h3>What you can see</h3><ul>'+
+          '<li>Activity view</li><li>The cloud computer, live</li>'+
+          '<li>Automated monitoring</li><li>Messages and approvals</li></ul></div>'+
+        '<div class="vs">vs</div>'+
+        '<div class="col right"><h3>What a record needs</h3><ul>'+
+          '<li>What it saw</li>'+
+          '<li class="gap">What it meant<span>Almost nobody covers this</span></li>'+
+          '<li>What it was allowed to do</li></ul></div>'+
+      '</div></div>'+
+      '<div class="foot">You cannot log your way to meaning after the fact. The terms have to be defined first.</div>';
+    }}
+  ];
+
+  var N=SHEETS.length, cur=0;
+  var frame=document.getElementById("frame"), layer=document.getElementById("renderLayer"),
+      dots=document.getElementById("dots"), status=document.getElementById("status"),
+      imgOut=document.getElementById("imgOut");
+
+  function sheetHTML(i){
+    return '<div class="sheet" data-i="'+i+'">'+SHEETS[i].build()+'<span class="mark">c13</span></div>';
+  }
+  var all=""; for(var i=0;i<N;i++){all+=sheetHTML(i);} layer.innerHTML=all;
+
+  function scaleOf(el){ el.style.transform="scale("+(frame.clientWidth/1200)+")"; }
+  function render(){
+    frame.innerHTML=sheetHTML(cur); scaleOf(frame.firstChild);
+    var d=""; for(var i=0;i<N;i++){
+      d+='<button class="dot" data-go="'+i+'" aria-current="'+(i===cur)+'" aria-label="Image '+(i+1)+'"></button>';
+    } dots.innerHTML=d;
+  }
+  function go(n){cur=(n+N)%N;render();}
+  document.getElementById("prev").onclick=function(){go(cur-1);};
+  document.getElementById("next").onclick=function(){go(cur+1);};
+  dots.onclick=function(e){var b=e.target.closest("[data-go]");if(b){go(+b.dataset.go);}};
+  if(window.ResizeObserver){new ResizeObserver(function(){if(frame.firstChild)scaleOf(frame.firstChild);}).observe(frame);}
+
+  function fileName(i){return "charmthirteen-issue17-0"+(i+1)+"-"+SHEETS[i].label+".jpg";}
+  function shoot(i){
+    return html2canvas(layer.children[i],{width:1200,height:800,scale:1,useCORS:true,
+      backgroundColor:"#faf9f6",logging:false});
+  }
+  function toBlob(c){return new Promise(function(res,rej){
+    c.toBlob(function(b){b?res(b):rej({code:"bad_request"});},"image/jpeg",0.95);});}
+
+  var dl=null, bOne=document.getElementById("dlOne"), bAll=document.getElementById("dlAll");
+  bOne.disabled=true; bAll.disabled=true;
+  function unavailable(){
+    bOne.hidden=true; bAll.hidden=true;
+    document.getElementById("note").innerHTML="Saving files is not available in this view. "+
+      "Use <b>Render all as images</b>, then right-click or long-press each one to save it.";
+  }
+  if(window.claude&&window.claude.use){
+    window.claude.use("downloads").then(function(d){
+      dl=d; if(d){bOne.disabled=false;bAll.disabled=false;} else {unavailable();}
+    },unavailable);
+  } else {unavailable();}
+
+  function explain(e){
+    var c=(e&&e.code)||"";
+    return c==="declined" ? "Save declined."
+      : c==="rate_limited" ? "Too many prompts at once. Wait a moment, then retry."
+      : "Saving is unavailable here. Use Render all as images instead.";
+  }
+  bOne.onclick=function(){
+    var i=cur; status.textContent="Rendering...";
+    shoot(i).then(toBlob).then(function(b){return dl.save({filename:fileName(i),data:b});})
+      .then(function(){status.textContent="Saved "+fileName(i);})
+      .catch(function(e){status.textContent=explain(e);});
+  };
+  bAll.onclick=function(){
+    bAll.disabled=true;bOne.disabled=true; var i=0;
+    (function step(){
+      if(i>=N){status.textContent="All 3 saved.";bAll.disabled=false;bOne.disabled=false;return;}
+      status.textContent="Image "+(i+1)+" of 3. Confirm the save when asked.";
+      shoot(i).then(toBlob).then(function(b){return dl.save({filename:fileName(i),data:b});})
+        .then(function(){i++;setTimeout(step,400);})
+        .catch(function(e){status.textContent=explain(e)+" Stopped at image "+(i+1)+".";
+          bAll.disabled=false;bOne.disabled=false;});
+    })();
+  };
+  document.getElementById("toImages").onclick=function(){
+    var b=this; b.disabled=true; imgOut.innerHTML=""; var i=0;
+    (function step(){
+      if(i>=N){status.textContent="All 3 rendered. Right-click or long-press to save.";b.disabled=false;return;}
+      status.textContent="Rendering "+(i+1)+" of 3...";
+      shoot(i).then(function(c){
+        var fig=document.createElement("figure"), im=new Image();
+        im.src=c.toDataURL("image/jpeg",0.95); im.alt=SHEETS[i].label;
+        var cap=document.createElement("figcaption"); cap.textContent=fileName(i);
+        fig.appendChild(im); fig.appendChild(cap); imgOut.appendChild(fig);
+        i++; setTimeout(step,120);
+      }).catch(function(){status.textContent="Render failed at image "+(i+1)+".";b.disabled=false;});
+    })();
+  };
+  render();
+})();
+</script>
