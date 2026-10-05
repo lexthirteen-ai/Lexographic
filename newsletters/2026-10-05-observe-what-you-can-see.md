@@ -45,20 +45,74 @@ That's the observability problem in real life. The agency that owned the portal 
 
 So: what should you look for when you watch a dot, or any agent? And how do you design safety when you give something a continuous environment, with your data, and still trust that it reached a sound decision?
 
-## Where CHARM comes in
+## What a decision record actually needs
 
-If you can't see what your agent did or why, how do you scale agents in a regulated environment? A decision record needs three things:
+If you can't see what your agent did or why, how do you scale agents in a regulated environment? Watching is not the same as knowing. A record you could hand to an auditor, or to a prime minister, needs three things:
 
-1. **Seen:** what the agent had access to and looked at. Activity views cover this.
-2. **Defined:** which terms, rules and definitions it applied. Almost nobody covers this.
-3. **Allowed:** what it was permitted to do. Permissions cover this.
+1. **What it saw.** The data and systems it had access to and actually looked at. Activity views cover this.
+2. **What it meant.** The terms, rules and definitions it reasoned with. Almost nobody covers this.
+3. **What it was allowed to do.** Permissions cover this.
 
-The "why" is only recoverable if the terms the agent reasoned with were defined before it started. That's what semantic modeling is for, and it's the heart of the CHARM framework: getting your environment prepared before you build AI. Next issue, I'll share how I'm modeling agents to scale in regulated environments, and what I've done to prepare for the design sessions later this month.
+The second one is the gap. The "why" is only recoverable if the terms the agent reasoned with were defined before it started. An agent that queries four systems where "medication" means four different things hasn't made a reasoning error. It's been handed an environment that can't support reasoning.
 
-> `[CHECK: the Seen / Defined / Allowed frame was a suggestion, not something CHARM says.
-> Replace with CHARM's real wording, or confirm this is close enough to keep.]`
+This is also the thinking behind a framework I've been developing called CHARM, which looks at how semantic modeling, domain-specific AI, and governance work together to make AI systems more reliable. It's still emerging, and I'd rather build it in the open than present it finished.
+
+Over the next three issues I'm unpacking the layers:
+
+1. **Design for Meaning.** Your AI doesn't have a data problem. It has a meaning problem.
+2. **Design for Context.** Does every AI problem need a bigger model?
+3. **Design for Trust.** Governance isn't a policy document. It's a design requirement.
+
+Healthcare is where I'll draw most of the examples, because terminology and mistakes matter enormously there and the problems are impossible to ignore. The design principles aren't healthcare-only, though. They land the same way in finance, government, logistics and HR.
 
 ## Also this week
+
+### Shipping this week
+
+| Tool | What landed | Why it matters |
+|---|---|---|
+| **Lovable** (Oct 1) | Live voice conversations for in-app AI features. Also EU data processing and IP allowlisting on Business and Enterprise. | Voice is the one to look at. You can put a real conversation inside a Lovable app now without standing up your own audio stack. |
+| **Replit** (Oct 2) | Agent now offers GPT-6.1 Sol in Max Mode and Claude Sonnet 5.5 in Power Mode. Plus an AI Integrations tool for lead scoring and request routing. | The integrations piece handles no API keys, which removes the step most non-technical builders get stuck on. |
+| **Models** | Sonnet 5.5 shipped Sep 28, GPT-6.1 Sol on Sep 29. | Both of the above arrived within a week of the models they run on. |
+| **Cursor** | Nothing new. Last entry is Sep 23, with Security Review and Rollouts bots for Teams and Enterprise. | Worth noting a quiet fortnight when everyone else is shipping.
+
+Sources: [Lovable changelog](https://docs.lovable.dev/changelog) · [Replit updates](https://docs.replit.com/updates) · [model timeline](https://llmgateway.io/timeline) · [Cursor changelog](https://cursor.com/changelog)
+
+### Claude Loves Lovable, five parts, starting Oct 28
+
+I'm teaching a five-part series with Central Exchange, virtual on Zoom, 8:30 to 10:00 AM CDT each time. It's hands-on. You build alongside me, and you leave every session with something you can use the same day: prompts, a workflow, and in session one a finished one-page brand system, a seeded Lovable project, and a Claude skill installed and ready.
+
+| | | |
+|---|---|---|
+| Oct 28 | Brand Before You Build | |
+| Nov 4 | Build Your Pitch Deck | |
+| Nov 11 | Build Your MVP | |
+| Nov 18 | Build Your Website | |
+| Dec 2 | Claude Code Loves Lovable | optional |
+
+Free for CX members, one voucher for CX partners, $25 otherwise. **Registering for the first session enrolls you in all five**, and spaces are limited so there's room for real interactive support. [Sign up here](https://members.centralexchange.org/events/details/virtual-claude-loves-lovable-brand-before-you-build-26154?calendarMonth=2026-10-01).
+
+### Opportunities worth your calendar
+
+**Kansas City**
+
+- **Oct 16** ALL ACCESS EXPO, Kauffman Foundation Conference Center
+- **Oct 17** Hustle 101 Pitch Competition, Keystone Innovation District
+- **Oct 21** Tech Venture Studio product development bootcamp, UMKC Innovation Center
+- **Nov 7** Using AI-Driven Data Analytics for Decision Making workshop
+- **Nov 15** NXTSTAGE Startup-Enterprise Summit
+- **November** DevFest KC, date to be announced
+- CommunityDays KC, two days, bringing the city's meetup groups together
+
+**Global, if you want to be on a stage rather than in an audience**
+
+- **AI Conf Asia 2027**, Kathmandu, Jan 8 to 10. Submissions close **November 1**, so this is the one with a clock on it.
+- **Agent Conference 2027**, New York, May 17 to 18. Call for proposals is open and reviewed on a rolling basis, no deadline.
+- **Rise of AI 2027**, Berlin and virtual, May 12. Speaker call open.
+- **AI Council 2027**, San Francisco, Mar 23 to 24. Practitioner-led, for people actually building.
+
+> `[CHECK: confirm each KC date against the organiser before sending. These came from
+> aggregators, and aggregator dates move.]`
 
 ### Stellar Agents
 
@@ -148,6 +202,20 @@ Samantha Dorisca's AfroTech piece quotes you saying this about Orinyx:
 > "If it catches something, it doesn't change anything. All it does is let the provider know, like, 'Hey, go take a second look.'"
 
 That is the same rule as Vesper staging and never sending, and the same gap the Medicare story exposes. Your article argues for it, your product does it, and you already said it out loud in print. Worth pulling into the Orinyx section or the close.
+
+## Pending
+
+**Last week's overlap check is not done.** The link you sent is `app.beehiiv.com`, the
+authenticated editor, so it returned an empty page. Send the public
+`artificiallydesigned.beehiiv.com/p/...` URL and I'll read it and cut anything this issue
+repeats. Your draft says "last week I wrote about ownership," which doesn't obviously match
+the September 21 issue, so this is a real check rather than a formality.
+
+## Central Exchange: your repo had this wrong
+
+Two weeks ago it was recorded as a single session. It's a five-part series, and registering
+for session one enrolls you in all five. The back half of this issue now has the full
+schedule. Worth fixing anywhere else you've described it as one class.
 
 ## Still needed from you
 
